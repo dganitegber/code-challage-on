@@ -1,11 +1,16 @@
 import React from 'react'
 import { Container, Sidebar, Menu, Icon, Image, Divider } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom'
-
+import ServerAPI from 'utils/ServerAPI'
 import logoIcon from 'images/logoIcon.png'
 
-
 class OspinSidebar extends React.Component {
+  error = Error(500)
+
+  constructor(props) {
+    super(props)
+    this.state = { hasError: false }
+  }
 
   getCurrentTabFromUrl() {
     const { location: { pathname } } = this.props
@@ -14,13 +19,22 @@ class OspinSidebar extends React.Component {
   }
 
   changeMenuTabHandler = tab => {
-    const { history } = this.props
-    history.push(`/${tab}`)
+    // const apiRequest = new ServerAPI()
+    this.setState({ hasError: false })
+    this.setState({ hasError: (Math.random() >= 0.5) })
+    if (this.state.hasError) {
+      const { history } = this.props
+      history.push('/error')
+      // console.log(ServerAPI.reportError({ errorName: '500' }))
+      ServerAPI.reportError({ errorName: '500', creationTime: new Date(), stackTrace: history })   
+    } else {
+      const { history } = this.props
+      history.push(`/${tab}`)
+    }
   }
 
   render() {
     const activeTab = this.getCurrentTabFromUrl()
-
     return (
       <Container>
         <Sidebar as={Menu} visible vertical className='medium with-margin-r'>
