@@ -1,4 +1,4 @@
-# Ospin Front-End Code Challenge
+# ON Front-End Code Challenge
 
 We are excited to be taking the next steps with you as a candidate! Our team has prepared a straight forward code challenge for you to complete. We value your time, and while you are free to spend as much time on the challenge as you wish, we have designed this to be completed _within two hours_.
 
@@ -6,7 +6,7 @@ We are excited to be taking the next steps with you as a candidate! Our team has
 ---
 ## Overview
 
-Provided is a simplified version of an old OSPIN React application. The application features a sidebar which uses React Router to navigate, and is complete with several views and a whole bunch of classic 20th century art. Also provided is a minimal testing set up, which should be all green when starting out.
+Provided is a simplified version of an old ON React application. The application features a sidebar which uses React Router to navigate, and is complete with several views and a whole bunch of classic 20th century art. Also provided is a minimal testing set up, which should be all green when starting out.
 
 As we expect to rapidly grow this application within a mean extreme programming machine, we want to make sure we have some sort of graceful error handling page for our clients when we goof up. After all, when you are in the middle of growing a new liver with a bioprocessing device controlled by a web app, you can't just have a blank screen show up if you encounter an error!
 
